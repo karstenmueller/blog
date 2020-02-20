@@ -1,8 +1,8 @@
 # README
 
-## Setup
+## Initial Setup
 
-Create a new hugo site
+### Create a new hugo site
 
 ~~~zsh
 hugo new site . --force
@@ -11,18 +11,29 @@ hugo new site . --force
 Add theme hugo-theme-bootstrap4-blog
 
 ~~~zsh
-git submodule add https://github.com/alanorth/hugo-theme-bootstrap4-blog.git themes/hugo-theme-bootstrap4-blog
+git submodule add -f https://github.com/alanorth/hugo-theme-bootstrap4-blog.git themes/hugo-theme-bootstrap4-blog
 echo 'theme = "hugo-theme-bootstrap4-blog"' >> config.toml
 ~~~
 
-Add theme mediumish-gohugo-theme
+### Setup git branch and worktree
+
+Create empty branch "gh-pages"
 
 ~~~zsh
-git submodule add https://github.com/lgaida/mediumish-gohugo-theme themes/mediumish-gohugo-theme
-echo 'theme = "mediumish-gohugo-theme"' >> config.toml
+git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initializing gh-pages branch"
+git push origin gh-pages
+git checkout master
 ~~~
 
-## Content
+Add "gh-pages" to worktree
+
+~~~zsh
+git worktree add -B gh-pages public origin/gh-pages
+~~~
+
+## Create Content
 
 Add a post "helloworld" as content/posts/helloworld.md
 
@@ -34,4 +45,12 @@ Review changes
 
 ~~~zsh
 hugo server --buildDrafts
+~~~
+
+## Publish Content
+
+~~~zsh
+hugo
+pushd public && git add --all && git commit -m "Initial commit to gh-pages" && popd
+git push origin gh-pages
 ~~~
