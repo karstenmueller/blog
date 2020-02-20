@@ -1,0 +1,10 @@
+# ignore hugo publishing
+/public/*
+!/public/.gitkeep
+
+# ignore themes (included as git submodules)
+themes/
+
+# local
+.DS_Store
+*~

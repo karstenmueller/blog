@@ -1,0 +1,62 @@
+baseURL = "http://karstenmueller.github.io/"
+languageCode = "en-us"
+title = "Karsten's tech shed"
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
+theme = "mediumish-gohugo-theme"
+summaryLength = 25
+copyright = "Except otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International license"
+enableEmoji = true
+
+[permalinks]
+  blog = "/blog/:year/:month/:day/:slug"
+
+[params.author]
+  name = "Karsten"
+  thumbnail = "/images/author.png"
+  description = "Blog author"
+
+[params.social]
+  github = "karstenmueller"
+  linkedin = "karmueller"
+  xing = "Karsten_Mueller"
+
+[params.index]
+  picture = "/images/author.png"
+  title = "Karsten Müller"
+  subtitle = "Working @LichtBlick"
+  mdtext = '''I like to create Solutions based on DevOps Principles.\
+  Building distributed systems with Opensource and Microsoft technologies with over 10 years of experience different job roles and industry sectors.
+
+  So true: "Everything should be made as simple as possible, but not simpler" (Albert Einstein)
+  '''
+  alertbar = false
+
+## Main Menu
+[[menu.main]]
+  name = "blog"
+  weight = 100
+  identifier = "blog"
+  url = "/posts"
+
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = false
+  [privacy.instagram]
+    disable = false
+    simple = true
+  [privacy.twitter]
+    disable = false
+    enableDNT = false
+    simple = true
+  [privacy.vimeo]
+    disable = false
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true

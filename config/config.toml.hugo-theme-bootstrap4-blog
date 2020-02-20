@@ -1,0 +1,34 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Karsten's blog"
+theme = "hugo-theme-bootstrap4-blog"
+enableRobotsTXT = true
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
+# number of posts to show on home/category/tag pages (Default: 10)
+paginate = 3
+copyright = "Except otherwise noted, content on this site is licensed under a <a rel='license' target='_parent' href='https://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution 4.0 International license</a>."
+enableGitInfo = true
+
+disqusShortname = "karstenmueller"
+
+[permalinks]
+  posts = "/:year/:month/:slug/"
+  page = "/:slug/"
+
+[params]
+  author = "Karsten Müller"
+  # description = "Description/Subtitle"
+  date_format = "2006-01-02"
+  # google_verify_meta = ""
+  sharingicons = false
+
+  [params.social]
+    # twitter handle for the site
+    twitter = "karstenmueller"
+
+  [params.sidebar]
+    # Optional about block for sidebar (can be Markdown)
+    about = "Random ramblings and musings<br><br>[Read more →](/about)"
+
+DefaultContentLanguage = "en"
